@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<html-content>
+
+  
+<!-- ===========================   HTML TUTORIALS BEGIN HERE  ======================== -->
+
+
+<html-tut>
+  <id>1</id>
+  <type>?html</type>
+  <thumbnail-image>"images/html5.png" alt="http://www.w3.org/html/logo/"</thumbnail-image>
+
+  <header>
+    Web Development Fundamentals part 1 (HTML) - How to make a basic article page
+  </header>
+
+  <content-summary>
+   In part one we will set up the basic structure and lay the semantics, will learn the basics of HTML tags such as headings, paragraphs, navigation structure and nesting. We will learn how to insert images and create a footer, also how to mark up some of our tags and distinguish content by using the right attributes.
+  </content-summary>
+  
+  <content-meta>
+    <author>Posted By: <strong>Plamen Kolev</strong></author>
+    <date>Posted On: 02.04.2014</date>
+    <difficulty>Difficulty: <strong>Intermediate</strong></difficulty>
+    <rating>5</rating>
+  </content-meta>
+  <content> 
+     <![CDATA[
+      <p>It is all scary and frightening in the beginning, but keep calm and carry on, kid, you will get used to it!
+      </p>
+      <h2> Setup </h2>
+      <img src="images/tut/pic1.jpg" class="img-responsive img-thumbnail pull-right" alt="Responsive image" /> 
+      <p>Create a new folder (for example "first web"). <br/>
+     
+      Use your favourite text editor (notepad++, sublime, gedit) and then make a file called index.html and save & place it inside the "first web" folder. Next, make a file called style.css and put in in the same folder.  <br/>
+      Now we will set up the .html file and we will link it to the .css file (note they have to be in the same folder if you want to use the short notation "style.css").
+      
+<pre>
+  &lt;!DOCTYPE html>
+  &lt;html>
+  &lt;head>
+    &lt;meta charset="utf-8"/>
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    &lt;title>First Webpage&lt;/title>
+    &lt;link rel="stylesheet" href="style.css"/>
+  &lt;/head>
+  &lt;body>
+    
+  &lt;/body>
+  &lt;/html>
+</pre>
+    <h2>Building the semantics</h2>
+    <p>
+    After the setup we are ready for some HTML !<br/>
+     For now we will write the HTML structure, later we will tweak it's look and feel.
+    We will focus on the content between the body tags.
+    Step one will be to add a container, it is of a type of div. The div is a HTML element that helps separate the block items into nice chunks.<br/>
+    For example the menu will be one section, the article- another, if you have advertisement, it will populate its own div and so on.
+    So inside the body we will insert this code &lt;div class="container">&lt;/div>.
+    The part <span class="code">class="container" is not important right now.</span>
+
+    <br/>
+
+    Usually inside the container we will have a menu and the article itself. <br/>
+    So following the convention we will add two more divs inside the container div - it should look like this:
+    <pre>
+      &lt;div class="container">
+        &lt;div class="menu">&lt;/div>
+        &lt;div class="article">&lt;/div>
+      &lt;div>
+            
+    </pre>
+    Inside the menu we will create...duh, the menu !
+    Html menus follow this logic: make a parent ul tag and put li as children.
+    <pre>
+      &lt;ul>
+        &lt;li>Link1
+          &lt;ul>
+            &lt;li>Sublink >
+              &lt;ul>
+                &lt;li>Deeper&lt;/li>
+              &lt;/ul>
+            &lt;/li> 
+          &lt;/ul>
+        &lt;/li>
+        &lt;li>Link2&lt;/li>
+        &lt;li>Link3&lt;/li>
+      &lt;/ul>
+    </pre>
+    Right now the menu items are just structured text, to create links from them we use the "a" tag. <span class="code">&lt;a>Tag&lt;/a></span> creates a link in the object that it is wrapped around to an external location.<br/> Link is specified inside the a tag as an attribute:
+      <span class="code">&lt;a href="google.com">Google!&lt;/a></span>, where href specifies the location. The text between the "a" tag is the "link name".<br/><br/>
+      Instead of "Google!", we can put a div inside, ul element or anything we want and this will turn it in a link. So:
+      <pre>
+        &lt;li>&lt;a href="google.com">Deeper&lt;/a>&lt;/li>
+      </pre>
+
+      <br/> When the text Deeper is clicked it will redirect you to google.com now.<br/>
+      We can now customize our menu and where it will send us on click, so we can have multiple articles.<br/>
+      Now lets write the article structure and "content".<br/>
+      Under the closing tag of the menu div we add <span class="code">&lt;div class="article">&lt;/div></span>. <br/>
+      When writing the article we need to hive a heading, it is marked with &lt;h1>&lt;/h1>, followed by a paragraph or a sub header. It is important to keep the nesting logic.<br/>
+      Now we will also introduce the concept of images, because... images are very important! <br/>
+      Adding an image to your web-page is done like this: <span class="code">&lt;img src="cat.jpg"/></span>. Cat.jpg is the URL(link) to the image, also notice that there is no closing tag,but rather />.<br/> This is known as a self closing tag and few other HTML elements use it.
+      To add a paragraph under our headings we simply wrap our paragraph text with the <span class="code">&lt;p>&lt;/p></span> tag.<br/>
+      Now inside the article div, we should have something like this:
+      <pre>
+        &lt;h1>Article Name&lt;/h1>
+        &lt;hr/>
+          &lt;h2>Most importantly&lt;/h2>
+            &lt;img src="http://fc02.deviantart.net/fs70/f/2010/185/d/f/df2b11585fdf32b85c78a92c53cc7d6f.jpg" alt="">
+              &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>
+          &lt;h2>Second by importance&lt;/h2>
+            &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>
+      </pre>
+      Now we will add some "meta-data", so we need to make a div with a class of metadata. Inside we will put two paragraphs that will tell us who wrote it and when.
+      <pre>
+        &lt;div class="meta">
+          &lt;p>Written by: John Snow&lt;/p>
+          &lt;p>Written on: 01.02.2013&lt;/p>
+        &lt;/div>
+      </pre>
+      And finally, the footer, we make a div with a class footer and inside we put a paragraph with a copyright sign and the name of the creator, e.g.:
+      <pre>
+        &lt;div class="footer">
+          &lt;p>Plamen Kolev, all rights reserved 2014&lt;/p>
+        &lt;/div>
+      </pre>
+      <img class="pull-left" src="images/examp.jpg" alt=""/>
+      This is how it should look now, it is structured right, but looks boring and visually static.<br/>
+      To see how to make it more fun by using CSS, visit the part 2 where we will focus on designing the look and feel on top of the "skeleton" we created. There we will explain also why we used class="name" and how it will help us structure the content. <br/>
+      Note that the image used is taken from my <a href="http://taiart.deviantart.com/">deviantart</a> gallery and is my own work.
+      <a class="continued" href="fullview.html?2">Go to part 2</a>
+
+
+      </div>
+
+    </div>
+    
+    ]]>
+  
+  </content>
+</html-tut>
+
+
+
+<html-tut>
+  <id>2</id>
+  <type>?html</type>
+  <thumbnail-image>"images/html5.png" alt="http://www.w3.org/html/logo/</thumbnail-image>
+
+  <header>
+    Web Development Fundamentals part 2 (CSS) - How to make a basic article page
+  </header>
+
+  <content-summary>
+    This tutorial builds upon the previous one. In it we will introduce the concept of styling using a style-sheet and will see the numerous benefits of using a well structured document to change color, size and the way elements behave in a page. We will also explore the concept of a drop-down menu and floating elements around the page.
+  </content-summary>
+  
+  <content-meta>
+    <author>Posted By: <strong>Plamen Kolev</strong></author>
+    <date>Posted On: 12.04.2014</date>
+    <difficulty>Difficulty: <strong>Intermediate</strong></difficulty>
+    <rating>4</rating>
+  </content-meta>
+  <content> 
+    <![CDATA[
+    <p>This is part two of building a website article, please visit <a href="fullview.html?1">part 1</a> if you haven't yet.</p>
+      <h2>CSS 101</h2>
+      <p>
+        Css uses different targets to mark elements in the html and to change their behaviour.<br/>
+        For example we can change the size, color, background, visibility, display properties and much more with css.<br/>
+        If we want to change all h1 elements we put h1{ and in here we write the new property of all h1 tags }.
+        In the previous tutorial we had a div with class of article, if we want to change a single div that is an article we will do it like this: <br/>
+        div.article{ changes go here } - this command finds all divs that have a class of article. <br/>
+        A class attribute is added to an element if the feature the class is changing is going to be repeated. <br/>
+        For example a footer that will be used in a numerous pages, a link property that will be common across the whole page and so on. Also keep in mind that to target the styling of id, we use # and to target class we use a dot (.).<br/>
+        Other than class, html supports an attribute called an id, it is used for unique occourances, such as a styling change that deviates from a norm or disambiguation attribute, we will see the distinction in the the few examples that are to follow.
+      </p>
+      <h2>Next step</h2>
+      <p>
+        Here are some resources that will be required: background image can be found <a href="http://subtlepatterns.com/escheresque/">here</a>.<br/>
+        Now make a folder inside first web folder and name it "images" and put inside the file inside the archive in the newly created folder.<br/>
+        Now we change the background look with the image we just used. Open the css and write this code.
+        <pre>
+  body{
+    background-image: url("images/escheresque.png");  
+  }
+        </pre>
+        This will take the body tag and put background image everywhere and all the elements inside it(children) will inherit it. <br/>
+        Now we will add some restrains to our "container". Inside the CSS we can make it stay centered and fill a specified portion proportionally on page resize. Try it out, it makes the page more fun.
+       <pre>
+  .container{
+    margin:auto;
+    width:80%;
+  }
+        </pre>
+        Keep in mind that the .container div has almost everything inside, so it will affect everything.<br/>
+        Now we will make our menu a drop-down menu. For this purpose we will need extra mark-up for targeting the proper elements. You can copy and paste the change in your menu ul:
+        <div>
+          <pre class="double-example">
+  &lt;ul>
+    &lt;li id="dropdown1">Link1
+      &lt;ul id="submenu">
+        &lt;li id="dropdown2">Sublink >
+          &lt;ul id="sub-sub">
+            &lt;li>Deeper&lt;/li>
+          &lt;/ul>
+        &lt;/li> 
+      &lt;/ul>
+    &lt;/li>
+    &lt;li>Link2&lt;/li>
+    &lt;li>Link3&lt;/li>
+  &lt;/ul>
+          </pre>
+
+          <pre class="double-example">
+  
+  .menu > ul{
+    padding:0px;
+    background-color:#294657;
+    width:100%;
+    color:white;
+    cursor: pointer;
+  }
+
+  ul li{
+    padding-top:20px;
+    display: inline-block;
+    height:40px;
+    width:100px;
+    border-right:1px dotted gray;
+    padding-left:50px;
+  }
+
+  #submenu{
+    display: none;
+  }
+
+  #submenu > li{
+    background-color:#476c82;
+    position: absolute;
+    height:20px;
+    padding:10px;
+    color:white;
+
+  }
+
+  #dropdown1:hover #submenu{
+    display: block;
+    margin-left:-90px;
+    margin-top:20px;
+  }
+
+  #sub-sub{
+    display: none;
+  }
+
+  #dropdown2:hover #sub-sub{
+    display: block;
+  }
+
+  #sub-sub > li{
+    background-color:#7398ad;
+    margin-top:-30px;
+    margin-left:70px;
+    position: absolute;
+    height:20px;
+    padding:10px;
+    color:white;
+
+  }
+
+          </pre>
+      </div>
+
+      How the css to the right work?<br/>
+      Well, it adds common styling and relative size so that the menu follows resizing, also adds color and background.<br/>
+      The <span class="code">.menu > ul </span> in the css means target the first child of all items that have the class of menu. <br/>
+      <span class="code">Cursor: pointer;</span> makes it so that when you hover with your mouse, it becomes a pointer rather than a text indicator.
+      Next, by using <span class="code">display:none;</span> on the sub menus, we made them go away. <br/>
+      By setting their position to absolute, we made sure that we can position them around as we please.<br/>
+      The hover-appear effect is achieved with this piece of CSS:
+      <pre>
+  #dropdown1:hover #submenu{
+    display: block;
+    margin-left:-90px;
+    margin-top:20px;
+  }
+      </pre>
+      It is read as such: when you hover the element that holds the id of dropdown1, make the submenu id and everything inside visible again, and also position it approparietly. The margins set how much pixels an element will be placed from top,left,right,bottom. <br/>
+      After we make it visible and positioned properly, we can add some style to make it look differently(e.g like a sub menu by targeting the id of the sub menu)   and modifying only the ul/li associated with that submenu.<br/>
+       <img src="images/dropdown.jpg" alt="" class="img-thumbnail" style="width:100%"/>
+      The logic behind the "sub-sub" menu is the same but one nesting deeper.<br/>
+      Now to add a "container" feeling to the article div, add this to the css  <span class="code">.article{padding:20px;background-color:white}</span>.<br/>
+      What it does is add white background inside everything part of the article div and adds inner boundaries so that there is some "breeding space" inside.<br/>
+      We can change the way the text looks by using font-family, font-size and color in our css, let's see an example:<br/>
+      Before<span style="font-family: 'Tahoma';font-size:28px;color:red;">After</span> After uses font-size:28px; color:red; and  font-family: 'Tahoma'. Font family supports fallback, so you can add more fonts and if the user doesn't have the first font, the next one available will be used.
+      <br/>
+      Now we will make the image responsive:
+      <pre>
+  img{
+    width:60%;
+    float:right;
+    border:1px dashed gray;
+    padding:5px;
+    margin:10px;
+  }
+      </pre>
+      Float:right might seem odd, but what it does is forces the image to go to the right and makes the text flow into the available space after the move.<br/>
+      Width:60% resizes the image based on the size of the container, so it always scales up and down, you can also use width:100px; or height:300px depending on your needs. <br/>
+      Adding float right to the image introduces a problem, this will force every single element to flow to the left of the image, even the next heading, to prevent that we will create a float boundary to the image. To do so, we need the following code.
+      <pre>
+  <span class="clearfix"></span> &lt;-- In the HTML
+  .clearfix{ &lt;--- In the css
+    clear:both;
+    float:none;
+    display: block
+  }
+      </pre>
+    Now everytime we insert span with class of clearfix behind an element, the element will not be afected by the floating.
+    <img src="images/clearfix.jpg" alt="" class="img-thumbnail" style="width:100%"/>
+      And finally, the footer, we will make the .footer container black, add some padding and change the color of the text
+      <pre>
+  .footer{
+    height:40px;
+    background-color:black;
+    color:white;
+    padding:10px;
+  }
+      </pre>
+      Before and after CSS, the left is the result of the 1st tutorial and second image is the final version.
+      <a href="examples/first_web/index.html">Live view here</a>
+      <img src="images/before.png" alt="" class="img-thumbnail" style="width:40%"/>
+      <img src="images/after.png" alt="" class="img-thumbnail" style="width:40%"/>
+
+
+    ]]>
+  </content>
+</html-tut>
+
+<html-tut>
+  <id>11</id>
+  <type>?html</type>
+  <thumbnail-image>"images/html5.png" alt="http://www.w3.org/html/logo/</thumbnail-image>
+
+  <header>
+    Introduction to HTML5
+  </header>
+
+  <content-summary>
+   We will take an overview of that html5 brings to the world of semantics and will see an example of new tags, also what new features it will bring.
+  </content-summary>
+  
+  <content-meta>
+    <author>Posted By: <strong>Plamen Kolev</strong></author>
+    <date>Posted On: 02.04.2014</date>
+    <difficulty>Difficulty: <strong>Easy</strong></difficulty>
+    <rating>5</rating>
+  </content-meta>
+  <content> 
+     <![CDATA[
+<h2>What does HTML5 mean, what does it bring?</h2>
+    <p>
+      We will talk about the technology and features that come with it and will not focus on the "buzz" aspect to it.<br/>
+      What it brings to the table is more meaning/semantics to the structure of the page.<br/>
+      Instead of using plain divs for everything, now there is a navigation tag, footer tag, sections and many more. <br/>
+      Another advantage is that it enables caching and websites can run locally without connection to the INTERNET. It also enables geolocation information and some interfacing with mobile devices.<br/>
+      It also allows for media to be played directly in the browser without any plugins (Flash). Another important thing is it's ability to render 3d graphics through the canvas tag.  
+    </p>
+    <h2>Example</h2>
+    <p>
+      Speaking of semantics, let's say you want to make an image with a caption underneath it, html5 allows you to make it more meaningful for the browser, also forces you to write markup that makes sense.
+      <pre class="double-example">
+        &lt;figure>
+          &lt;img style="max-width:100px" src="../../images/html5.png"/>
+          &lt;figcaption>Caption to it&lt;/figcaption>
+        &lt;/figure>
+      </pre>
+      Will produce this
+    <figure>
+      <img style="max-width:100px" src="images/html5.png"/>
+      <figcaption>Caption to it</figcaption>
+    </figure>
+    For more examples you can visit this website <a href="http://www.chromeexperiments.com/">Chrome experiments</a>
+    
+    ]]>
+  
+  </content>
+</html-tut>
+
+<!-- ===========================   jquery/js TUTORIALS BEGIN HERE   ======================== -->
+
+<jquery-tut>
+  <id>3</id>
+  <type>?jquery</type>
+  <thumbnail-image>"images/jquery.gif" alt="http://www.jkg.co.in/jQuery%20Tutorial%20In%20Hindi.html"</thumbnail-image>
+
+  <header>
+    Create a loading screen with jQuery
+  </header>
+
+  <content-summary>
+    In this tutorial, we asume you know a little bit about css and html, so we will focuse more on the javascript side of things and will try to explain how jQuery is pulling the strings in the background. We will create a loading screen by manipulating the DOM through jQuery. You can view the code and see live examples.
+  </content-summary>
+  
+  <content-meta>
+    <author>Posted By: <strong>Pamen Kolev</strong></author>
+    <date>Posted On: 01.04.2014</date>
+    <difficulty>Difficulty: <strong>Advanced</strong></difficulty>
+    <rating>4</rating>
+  </content-meta>
+  <content> 
+  	<![CDATA[
+
+  	 <h2>Setup</h2>
+    <p>
+      In this tutorial, we assume you know a little bit about CSS and HTML, so we will focus more on the Javascript side of things and will try to explain how jQuery is pulling the strings in the background.<br/>
+      <a href="examples/loading/index.html">Here</a> you can preview the end result.
+      <pre class="double-example">
+&lt;html>
+&lt;head>
+  &lt;meta charset="utf-8">
+  &lt;title>Loading&lt;/title>
+  &lt;link rel="stylesheet" href="style.css">
+  &lt;script src="jquery.js">&lt;/script>
+  &lt;script src="script.js">&lt;/script>
+&lt;/head>
+&lt;body>
+  &lt;div class="container">
+    &lt;button type="button" id="button">SHUTDOWN&lt;/button>
+    &lt;div class="loading">
+      &lt;div id="anim">&lt;p>&lt;/p>&lt;/div>
+      &lt;p>Please Wait&lt;/p>
+    &lt;/div>
+  &lt;/div>
+
+
+&lt;/body>
+&lt;/html>
+  </pre>
+  <pre class="double-example">
+body{
+  margin:0px;
+  padding:0px;
+}
+
+.container{
+  width:50%;
+  margin:auto;
+
+}
+
+#button{
+  text-align: center;
+  width:100%;
+  height:100px;
+  margin-top:30%;
+  cursor: pointer;
+  outline:0;
+  font-size:1.0em;
+  color:#606060;
+  border-radius:4px;
+  border:none;
+  background-color:#e7e8ea;
+  padding:0px;
+  box-shadow: inset 1px -15px 0px -10px rgba(0,0,0,0.2);
+  border:1px solid #eee;
+  
+
+
+}
+
+#button:hover{
+  -webkit-box-shadow: inset 1px -15px 0px -10px #74a5f7;
+-moz-box-shadow: inset 1px -15px 0px -10px #74a5f7;
+box-shadow: inset 1px -15px 0px -10px #74a5f7;
+}
+
+#button:active{
+  background-color:#74a5f7;
+color:white;
+
+-webkit-box-shadow: inset -14px 200px 0px -24px rgba(0,0,0,0.1);
+-moz-box-shadow: inset -14px 200px 0px -24px rgba(0,0,0,0.1);
+box-shadow: inset -14px 200px 0px -24px rgba(0,0,0,0.1);
+color:white;
+}
+
+
+.loading{
+  /*display: none;*/
+  width:100%;
+  height:100px;
+  margin-top:30%;
+  background-color:#f2f2f2;
+  border:1px dotted #999;
+  text-align: center;
+  border-radius:4px;
+  box-shadow: inset -14px 200px 0px -24px rgba(0,0,0,0.1);
+  display: none;
+
+}
+
+#anim{
+  display: none;
+  height:100px;
+  width:50%;
+  position: absolute;
+  background-image:url("load.png");
+  border-right:4px solid #6c8797;
+  box-shadow: inset -14px 200px 0px -24px rgba(0,0,0,0.1);
+}
+
+#anim p{
+  color:white;
+  font-size:1.5em;
+}
+
+.loading p{
+  z-index: 11;
+  margin-top:40px;
+}
+
+  </pre>
+
+  Make sure to download the image used <a href="examples/loading/load.png">here</a>. <br/>
+
+  Also make sure to link the jQuery file/URL to your website, you can do so by downloading JQuery and point it in the head of your HTML <span class="code">&lt;script src="jquery.js">&lt;/script></span> or by using google hosted by <span class="code">&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">&lt;/script></span><br/>
+  The html part contains of two parts, a button and a loading div that contains an animation panel, the loading div is hidden before the shutdown button is pressed. When pressed, the button triggers a jquery event that makes the loading div visible and also triggers the animation of it. <br/>
+
+  There isn't much substantial in the .css file, but it has info for hovering the button, pressing it, we also make the loading container take up dynamic space, set some neat shadows and hide the animation bit. We also include the downloaded image with <span class="code">background-image:url("load.png");</span><br/>
+  We also add a border right to get that swiping effect.
+  <h2>The jQuery Bit</h2>
+  <p> 
+    Now after we layed the fundamentals we can focus on the jquery fun.<br/>
+    We start of by wraping our jQuery with the ready function <span class="code">$(document).ready(function(){ &lt;-- CODE GOES IN HERE --> });</span>.<br/>
+    The code between the curly braces will be executed after the DOM is ready, making sure that everything will be set at the right time and we will get a proper code execution.<br/>
+    Now using jquery event handler we will cause something to happen inside our HTML document, we do that by using the click() function as such:<br/>
+    <pre>
+$("#button").click(function(){
+  Read as: When the element with id of button is clicked,
+  execute the function between the curly braces, like change color,move this, 
+  change visibility or execute a function.
+});
+    </pre>
+    We also create a variable called loading that will contain the progress, a variable in javascript is done by declaring var name-of-var = Assignment.<br/>
+    The one we need looks like this <span class="code">var loading = 0;</span><br/>
+    Time to write the animate function, a function is declared somewhere in the bottom of a .js file and starts with the word function, then function name, (with parameters) { and the body of the function }.<br/>
+    This is how our function will look like:
+    <pre>
+  function animate(){
+    if(loading/681*100&lt;100){
+      $("#anim p").html(parseInt(loading/681*100 )+ "%");
+    } else {
+      $("#anim p").html("Loading done");
+      $("#anim").css({"background-color":"white","background-image":"none"});
+      $("#anim p").css({"color":"#535353"});
+    }
+  }
+    </pre>
+    We convert the loading variable to percentage and check it against 100, if it is not 100% loaded, we keep animating it and we update the values in the #anim paragraph by using jquery <span class="code">.html()</span> function.<br/>
+    If the loading is done, we display "Loading done", we change the font color to black again.<br/>
+    We also use the jquery's built in animation function to create the background flowing effect in the loading bar. This is the most essential part of the animation. <br/>
+    Jquery animation breakdown:
+    $  ("tag").animate({ properties:values }), time, function(){}); <br/>
+    <pre>
+  $("#anim").animate({
+    backgroundPositionX: -loading/10+'%',
+    "width" : loading/681*50+"%",
+  },80, function(){});
+    </pre>
+
+    The width of the loading animation will we expanded until it reaches 100%, effectively creating the loading feeling.<br/>
+
+    And at the bottom of the function we increment the loading variable with some fixed value, I chose to use 5. Then we check if the loading has exceeded  the boundaries, if so, we return true to exit from the <span class="code">setTimeout.</span> <br/>
+    <pre>
+  loading+=5;
+  if (loading>688) {
+    return true
+  };
+  setTimeout(animate, 80);
+    </pre>
+
+    And now we are done, check it out.
+    <a href="examples/loading/index.html">Live example here</a>
+
+
+
+  	]]>
+  </content>
+</jquery-tut>
+
+
+<!-- ===========================   regexp TUTORIALS BEGIN HERE  ======================== -->
+
+<regexp-tut>
+  <id>5</id>
+  <type>?regexp</type>
+  <thumbnail-image>"images/iconfinder-regex.png" alt="http://www.quijotetapas.co.uk/alt/concrete5.4.2/search/"</thumbnail-image>
+
+  <header>
+    Creating a website from a txt data file
+  </header>
+
+  <content-summary>
+   In this tutorial we will explore the dynamic creation of content from a file. We will wrap the semantic HTML meaning around patterns in the text. We will explore the functionality in text editors and will show how they can be used in our advantage.
+  </content-summary>
+  
+  <content-meta>
+    <author>Posted By: <strong>Plamen Kolev</strong></author>
+    <date>Posted On: 01.04.2014</date>
+    <difficulty>Difficulty: <strong>Hard</strong></difficulty>
+    <rating>4</rating>
+  </content-meta>
+  <content> 
+    <![CDATA[
+         <h2>Setup</h2>
+    <p>
+      We will need a text editor that supports regular expressions and the resource text that we will operating on.<br/>
+      As the editor, <a href="http://www.sublimetext.com/">Sublime Text</a> will be used. This is the data we will be manipulating:
+      <pre>
+        
+A - Alpha
+"I have a diver down; keep well clear at slow speed."
+B - Bravo
+"I am taking in, or discharging, or carrying dangerous goods."
+C - Charlie
+"Affirmative."
+D - Delta
+"Keep clear of me; I am maneuvering with difficulty."
+E - Echo
+"I am altering my course to starboard."
+F - Foxtrot
+"I am disabled; communicate with me."
+G - Golf
+"I require a pilot."
+H - Hotel
+"I have a pilot on board."
+I - India
+"I am altering my course to port."
+J - Juliet
+"I am on fire and have dangerous cargo on board: keep well clear of me," or "I am leaking dangerous cargo."
+K - Kilo
+"I wish to communicate with you."
+L - Lima
+"The ship is under Quarantine." At sea: "You should stop your vessel instantly."
+M - Mike
+"My vessel is stopped and making no way through the water."
+N - November
+"Negative."
+O - Oscar
+"Man overboard."
+P - Papa
+"All persons should report on board as the vessel is about to proceed to sea."
+Q - Quebec
+"My vessel is 'healthy' and I request free pratique."
+R - Romeo
+"The way is off my ship."
+S - Sierra
+"I am operating astern propulsion."
+T - Tango
+"Keep clear of me; I am engaged in pair trawling."
+U - Uniform
+"You are running into danger."
+V - Victor
+"I require assistance."
+W - Whiskey
+"I require medical assistance."
+X - X-ray
+"Stop carrying out your intentions and watch for my signals."
+Y - Yankee
+"I am dragging my anchor."
+Z - Zulu
+"I require a tug."
+
+
+Maritime Signals: Numbers
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+      </pre>
+    <h2>So...</h2>
+    <p>
+      Enable regexp in sublime by pressing CTRL+F and enabling the * icon on the bottom right corner.<br/>
+      Next we use <span class="code">\w+\s-\s.+\n"(.*?)"$</span> to select the letter, word and what it means and wrap HTML around it. This regular expression reads as follows:<br/>
+      Start from beginning and fin 1 or more words, a space, dash and space and then match everything until the end, then match everything below that is surrounded by quotes (.*?) and the dollar sign matches everything till the end.<br/>
+      Press find all and press the arrow key &lt; to go to the beginning of everything matched and write your markup, for example p tag, then re-enter the expression, find all and press > arrow to get to the end of all selections and close your p tag.<br/>
+      Let's say that now you want to have the description in a different color, you can match it with <span class="code">(.*?)"$</span> and wrap it with a span with color red property the same way as above.<br/>
+      Now we can match the ending p tag with a normal search of &lt;/p> and insert an image placeholder before it. Unfortunate we have to do the href url by hand.
+    </p>
+    ]]>
+  </content>
+</regexp-tut>
+
+<regexp-tut>
+  <id>6</id>
+  <type>?regexp</type>
+  <thumbnail-image>"images/iconfinder-regex.png" alt="http://www.quijotetapas.co.uk/alt/concrete5.4.2/search/</thumbnail-image>
+
+  <header>
+    Regexp fundamentals - Matching dates with regular expression
+  </header>
+
+  <content-summary>
+    Regular expression is a powerful programmer's tool that is used to filter, find and manipulate data. By using regular expressions(or regexp) you can find metadata, patterns and certain characteristics of data and use them to your advantage.
+  </content-summary>
+  
+  <content-meta>
+    <author>Posted By: <strong>Plamen Kolev</strong></author>
+    <date>Posted On: 01.04.2014</date>
+    <difficulty>Difficulty: <strong>Hard</strong></difficulty>
+    <rating>5</rating>
+  </content-meta>
+  <content> 
+    <![CDATA[
+<h2>Introduction to regular expression</h2>
+    <p>Regular expression is a powerful programmer's tool that is used to filter, find and manipulate data. By using regular expressions(or regexp) you can find metadata, patterns and certain characteristics of data and use them to your advantage.<br/>
+    For example, you can match dates, define how content is structured and perform certain repeating task on it.<br/>
+    You can also automate certain tasks, like adding 100 tags across all 100 paragraphs instead of doing it by hand. <br/>
+    <h2>Enough talking, time for examples</h2>
+    Let's say we want to find all the dates in a document, maybe we want to see when the first post and the last post were made, and see how long ago the user has been posting.<br/>
+    Here are some dates with random characters thrown around
+    <pre>
+    2014-05-16adasdasd
+    2014-05-19
+    asdasd
+    2014-05-27
+    2014-05-29
+    asdasd
+    20asdasd14-0asd7-07
+    2014-09-05
+    2014-asd09-18
+    2014-12-10
+    2014-12-17
+    2014-12-18  
+    </pre>
+    We will match the valid dates that do not contain garbage letters with this pattern <span class="code">\d+-\d+-\d+</span>.<br/>
+    What does it mean? \d means match any number, so "asd1df32" will match 1,3 and 2. \d+ means 1 character or more, so it will match 1 and 32. <br/>
+    The dash is not a regular expression character, so it is taken literally and the pattern is repeating, matching 2014 (1 digit or more) - (1 or more) - (1 or more).<br/>
+    Result:
+    <pre>
+  2014-05-16
+  2014-05-19
+  2014-05-27
+  2014-05-29
+  2014-09-05
+  2014-12-10
+  2014-12-17
+  2014-12-18
+    </pre>
+    We can be more strict with the regular exp, we can specify how many digits, letters, etc have to be matched. Example: 20144-12-31 will be matched as a valid date which is not.<br/>
+    To constrain the result we do so with <span class="code">\d{4}</span>. This will invalidate the year and the result will not be matched.<br/>
+    <h2>Real world implication and deviation</h2>
+    <p>
+    In the real world not everyone writes 2014-02-02, sometimes it might be 2014.02.02. Regexp has you covered... <br/>
+    Introducing the "or" in regexp. Let's say we want to find all greetings in a text, we will search for Hi or Hello. This will match them <span class="code"> h(i|ello) </span>. in the braces separated by | (pipe) sais match either hi or hello.<br/>
+    So if we want to match 2014.02... or 2014-02... we use it like that - <span class="code">\d{4}(-|.)\d{2}(-|.)\d{2}</span><br/>
+    Verbally that will sound like this, find 4 digits, then dot or dash, then two digits, then dash/dot and two digits. 
+
+    </p>
+    ]]>
+  </content>
+</regexp-tut>
+
+
+
+</html-content>

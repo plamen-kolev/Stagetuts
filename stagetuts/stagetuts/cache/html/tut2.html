@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Product name</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="../../css/bootstrap.min.css" rel ="stylesheet"/>
+  <link href="../../style.css" rel= "stylesheet"/>
+  <script src="../../js/jquery.js"></script>
+  <script src="../../js/builder.js"></script>
+  <link rel="icon" type="image/ico" href="favicon.ico"/>
+
+</head>
+<body>
+
+	  <div class="navbar">
+  <a class="navbar-brand col-md-2" href="../../index.html"><span class="spec-color">S</span>tageHelp
+  </a>
+  
+
+  <div class="col-sm-2" id="search-style">
+    <div class="input-group">
+      <form action="gallery.html">
+      <div class="restrain">
+      <input id="term" name="search-term" size="20" type="text">
+      <input id="term-go" type="submit" class="btn btn-default" value="Seek"/>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- navbar-toggle will  -->
+  <div class="navbar-toggle pull-left" id="small-nav" data-toggle="collapse" data-target=".big-nav">
+    <div class="toggle-small">^</div>
+    <ul class="menu-small" id="menu-click">
+      <li><a class="homepage-link" href="../../index.html">Hai !</a></li>
+      <li><a class="html-link" href="../html.html">HTML&amp;CSS</a></li>
+      <li><a class="jquery-link" href="../jquery.html">JQUERY&amp;JavaScript</a></li>
+      <li><a class="regexp-link" href="../regexp.html">RegEXP</a></li>
+      <li><a class="generator-link" href="../../generator.html">Generators</a></li>
+    </ul>
+    
+  </div>
+  <div class="collapse navbar-collapse big-nav col-md-7">
+    <ul class="pull-right breadcrumb menu-style">
+      <li><a class="homepage-link" href="../../index.html">Hai !</a></li>
+      <li><a class="html-link" href="../html.html">HTML&amp;CSS</a></li>
+      <li><a class="jquery-link" href="../jquery.html">JQUERY&amp;JavaScript</a></li>
+      <li><a class="regexp-link" href="../regexp.html">RegEXP</a></li>
+      <li><a class="generator-link" href="../../generator.html">Generators</a></li>
+    </ul>
+  </div>
+
+</div>
+<div class="container">
+  		
+  		<h1 id="fullview-heading">Web Development Fundamentals part 2 (CSS) - How to make a basic article page</h1>
+			<hr/>
+      <div id="fullview-paragraph">
+        
+  <p>This is part two of building a website article, please visit <a href="fullview.html?1">part 1</a> if you haven't yet.</p>
+      <h2>CSS 101</h2>
+      <p>
+        Css uses different targets to mark elements in the html and to change their behaviour.<br/>
+        For example we can change the size, color, background, visibility, display properties and much more with css.<br/>
+        If we want to change all h1 elements we put h1{ and in here we write the new property of all h1 tags }.
+        In the previous tutorial we had a div with class of article, if we want to change a single div that is an article we will do it like this: <br/>
+        div.article{ changes go here } - this command finds all divs that have a class of article. <br/>
+        A class attribute is added to an element if the feature the class is changing is going to be repeated. <br/>
+        For example a footer that will be used in a numerous pages, a link property that will be common across the whole page and so on. Also keep in mind that to target the styling of id, we use # and to target class we use a dot (.).<br/>
+        Other than class, html supports an attribute called an id, it is used for unique occourances, such as a styling change that deviates from a norm or disambiguation attribute, we will see the distinction in the the few examples that are to follow.
+      </p>
+      <h2>Next step</h2>
+      <p>
+        Here are some resources that will be required: background image can be found <a href="http://subtlepatterns.com/escheresque/">here</a>.<br/>
+        Now make a folder inside first web folder and name it "images" and put inside the file inside the archive in the newly created folder.<br/>
+        Now we change the background look with the image we just used. Open the css and write this code.
+        <pre>
+  body{
+    background-image: url("images/escheresque.png");  
+  }
+        </pre>
+        This will take the body tag and put background image everywhere and all the elements inside it(children) will inherit it. <br/>
+        Now we will add some restrains to our "container". Inside the CSS we can make it stay centered and fill a specified portion proportionally on page resize. Try it out, it makes the page more fun.
+       <pre>
+  .container{
+    margin:auto;
+    width:80%;
+  }
+        </pre>
+        Keep in mind that the .container div has almost everything inside, so it will affect everything.<br/>
+        Now we will make our menu a drop-down menu. For this purpose we will need extra mark-up for targeting the proper elements. You can copy and paste the change in your menu ul:
+        <div>
+          <pre class="double-example">
+  &lt;ul>
+    &lt;li id="dropdown1">Link1
+      &lt;ul id="submenu">
+        &lt;li id="dropdown2">Sublink >
+          &lt;ul id="sub-sub">
+            &lt;li>Deeper&lt;/li>
+          &lt;/ul>
+        &lt;/li> 
+      &lt;/ul>
+    &lt;/li>
+    &lt;li>Link2&lt;/li>
+    &lt;li>Link3&lt;/li>
+  &lt;/ul>
+          </pre>
+
+          <pre class="double-example">
+  
+  .menu > ul{
+    padding:0px;
+    background-color:#294657;
+    width:100%;
+    color:white;
+    cursor: pointer;
+  }
+
+  ul li{
+    padding-top:20px;
+    display: inline-block;
+    height:40px;
+    width:100px;
+    border-right:1px dotted gray;
+    padding-left:50px;
+  }
+
+  #submenu{
+    display: none;
+  }
+
+  #submenu > li{
+    background-color:#476c82;
+    position: absolute;
+    height:20px;
+    padding:10px;
+    color:white;
+
+  }
+
+  #dropdown1:hover #submenu{
+    display: block;
+    margin-left:-90px;
+    margin-top:20px;
+  }
+
+  #sub-sub{
+    display: none;
+  }
+
+  #dropdown2:hover #sub-sub{
+    display: block;
+  }
+
+  #sub-sub > li{
+    background-color:#7398ad;
+    margin-top:-30px;
+    margin-left:70px;
+    position: absolute;
+    height:20px;
+    padding:10px;
+    color:white;
+
+  }
+
+          </pre>
+      </div>
+
+      How the css to the right work?<br/>
+      Well, it adds common styling and relative size so that the menu follows resizing, also adds color and background.<br/>
+      The <span class="code">.menu > ul </span> in the css means target the first child of all items that have the class of menu. <br/>
+      <span class="code">Cursor: pointer;</span> makes it so that when you hover with your mouse, it becomes a pointer rather than a text indicator.
+      Next, by using <span class="code">display:none;</span> on the sub menus, we made them go away. <br/>
+      By setting their position to absolute, we made sure that we can position them around as we please.<br/>
+      The hover-appear effect is achieved with this piece of CSS:
+      <pre>
+  #dropdown1:hover #submenu{
+    display: block;
+    margin-left:-90px;
+    margin-top:20px;
+  }
+      </pre>
+      It is read as such: when you hover the element that holds the id of dropdown1, make the submenu id and everything inside visible again, and also position it approparietly. The margins set how much pixels an element will be placed from top,left,right,bottom. <br/>
+      After we make it visible and positioned properly, we can add some style to make it look differently(e.g like a sub menu by targeting the id of the sub menu)   and modifying only the ul/li associated with that submenu.<br/>
+       <img src="../../images/dropdown.jpg" alt="" class="img-thumbnail" style="width:100%"/>
+      The logic behind the "sub-sub" menu is the same but one nesting deeper.<br/>
+      Now to add a "container" feeling to the article div, add this to the css  <span class="code">.article{padding:20px;background-color:white}</span>.<br/>
+      What it does is add white background inside everything part of the article div and adds inner boundaries so that there is some "breeding space" inside.<br/>
+      We can change the way the text looks by using font-family, font-size and color in our css, let's see an example:<br/>
+      Before<span style="font-family: 'Tahoma';font-size:28px;color:red;">After</span> After uses font-size:28px; color:red; and  font-family: 'Tahoma'. Font family supports fallback, so you can add more fonts and if the user doesn't have the first font, the next one available will be used.
+      <br/>
+      Now we will make the image responsive:
+      <pre>
+  img{
+    width:60%;
+    float:right;
+    border:1px dashed gray;
+    padding:5px;
+    margin:10px;
+  }
+      </pre>
+      Float:right might seem odd, but what it does is forces the image to go to the right and makes the text flow into the available space after the move.<br/>
+      Width:60% resizes the image based on the size of the container, so it always scales up and down, you can also use width:100px; or height:300px depending on your needs. <br/>
+      Adding float right to the image introduces a problem, this will force every single element to flow to the left of the image, even the next heading, to prevent that we will create a float boundary to the image. To do so, we need the following code.
+      <pre>
+  <span class="clearfix"></span> &lt;-- In the HTML
+  .clearfix{ &lt;--- In the css
+    clear:both;
+    float:none;
+    display: block
+  }
+      </pre>
+    Now everytime we insert span with class of clearfix behind an element, the element will not be afected by the floating.
+    <img src="../../images/clearfix.jpg" alt="" class="img-thumbnail" style="width:100%"/>
+      And finally, the footer, we will make the .footer container black, add some padding and change the color of the text
+      <pre>
+  .footer{
+    height:40px;
+    background-color:black;
+    color:white;
+    padding:10px;
+  }
+      </pre>
+      Before and after CSS, the left is the result of the 1st tutorial and second image is the final version.
+      <a href="../../examples/first_web/index.html">Live view here</a>
+      <img src="../../images/before.png" alt="" class="img-thumbnail" style="width:40%"/>
+      <img src="../../images/after.png" alt="" class="img-thumbnail" style="width:40%"/>
+
+      </div>
+
+  	</div>
+    <div id="footer" class="col-lg-12">
+      <p>Plamen Kolev   &#169;</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Product name</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="../../css/bootstrap.min.css" rel ="stylesheet"/>
+  <link href="../../style.css" rel= "stylesheet"/>
+  <script src="../../js/jquery.js"></script>
+  <script src="../../js/builder.js"></script>
+  <link rel="icon" type="image/ico" href="favicon.ico"/>
+
+</head>
+<body>
+
+	  <div class="navbar">
+  <a class="navbar-brand col-md-2" href="../../index.html"><span class="spec-color">S</span>tageHelp
+  </a>
+  
+
+  <div class="col-sm-2" id="search-style">
+    <div class="input-group">
+      <form action="gallery.html">
+      <div class="restrain">
+      <input id="term" name="search-term" size="20" type="text">
+      <input id="term-go" type="submit" class="btn btn-default" value="Seek"/>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- navbar-toggle will  -->
+  <div class="navbar-toggle pull-left" id="small-nav" data-toggle="collapse" data-target=".big-nav">
+    <div class="toggle-small">^</div>
+    <ul class="menu-small" id="menu-click">
+      <li><a class="homepage-link" href="../../index.html">Hai !</a></li>
+      <li><a class="html-link" href="../html.html">HTML&amp;CSS</a></li>
+      <li><a class="jquery-link" href="../jquery.html">JQUERY&amp;JavaScript</a></li>
+      <li><a class="regexp-link" href="../regexp.html">RegEXP</a></li>
+      <li><a class="generator-link" href="../../generator.html">Generators</a></li>
+    </ul>
+    
+  </div>
+  <div class="collapse navbar-collapse big-nav col-md-7">
+    <ul class="pull-right breadcrumb menu-style">
+      <li><a class="homepage-link" href="../../index.html">Hai !</a></li>
+      <li><a class="html-link" href="../html.html">HTML&amp;CSS</a></li>
+      <li><a class="jquery-link" href="../jquery.html">JQUERY&amp;JavaScript</a></li>
+      <li><a class="regexp-link" href="../regexp.html">RegEXP</a></li>
+      <li><a class="generator-link" href="../../generator.html">Generators</a></li>
+    </ul>
+  </div>
+
+</div>
+<div class="container">
+  		
+  		<h1 id="fullview-heading"> Creating a website from a txt data file</h1>
+			<hr/>
+      <div id="fullview-paragraph">
+        
+     <h2>Setup</h2>
+    <p>
+      We will need a text editor that supports regular expressions and the resource text that we will operating on.<br/>
+      As the editor, <a href="http://www.sublimetext.com/">Sublime Text</a> will be used. This is the data we will be manipulating:
+      <pre>
+        
+A - Alpha
+"I have a diver down; keep well clear at slow speed."
+B - Bravo
+"I am taking in, or discharging, or carrying dangerous goods."
+C - Charlie
+"Affirmative."
+D - Delta
+"Keep clear of me; I am maneuvering with difficulty."
+E - Echo
+"I am altering my course to starboard."
+F - Foxtrot
+"I am disabled; communicate with me."
+G - Golf
+"I require a pilot."
+H - Hotel
+"I have a pilot on board."
+I - India
+"I am altering my course to port."
+J - Juliet
+"I am on fire and have dangerous cargo on board: keep well clear of me," or "I am leaking dangerous cargo."
+K - Kilo
+"I wish to communicate with you."
+L - Lima
+"The ship is under Quarantine." At sea: "You should stop your vessel instantly."
+M - Mike
+"My vessel is stopped and making no way through the water."
+N - November
+"Negative."
+O - Oscar
+"Man overboard."
+P - Papa
+"All persons should report on board as the vessel is about to proceed to sea."
+Q - Quebec
+"My vessel is 'healthy' and I request free pratique."
+R - Romeo
+"The way is off my ship."
+S - Sierra
+"I am operating astern propulsion."
+T - Tango
+"Keep clear of me; I am engaged in pair trawling."
+U - Uniform
+"You are running into danger."
+V - Victor
+"I require assistance."
+W - Whiskey
+"I require medical assistance."
+X - X-ray
+"Stop carrying out your intentions and watch for my signals."
+Y - Yankee
+"I am dragging my anchor."
+Z - Zulu
+"I require a tug."
+
+
+Maritime Signals: Numbers
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+      </pre>
+    <h2>So..</h2>
+    <p>
+      Enable regexp in sublime by pressing CTRL+F and enabling the * icon on the bottom right corner.<br/>
+      Next we use <span class="code">\w+\s-\s.+\n"(.*?)"$</span> to select the letter, word and what it means and wrap HTML around it. This regular expression reads as follows:<br/>
+      Start from beginning and fin 1 or more words, a space, dash and space and then match everything until the end, then match everything below that is surrounded by quotes (.*?) and the dollar sign matches everything till the end.<br/>
+      Press find all and press the arrow key &lt; to go to the beginning of everything matched and write your markup, for example p tag, then re-enter the expression, find all and press > arrow to get to the end of all selections and close your p tag.<br/>
+      Let's say that now you want to have the description in a different color, you can match it with <span class="code">(.*?)"$</span> and wrap it with a span with color red property the same way as above.<br/>
+      Now we can match the ending p tag with a normal search of &lt;/p> and insert an image placeholder before it. Unfortunate we have to do the href url by hand.
+    </p>
+
+</div>
+</div>
+<div id="footer" class="col-lg-12">
+  <p>Plamen Kolev   &#169;</p>
+</div>
+
+
+</body>
+</html>

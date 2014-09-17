@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Product name</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="../../css/bootstrap.min.css" rel ="stylesheet"/>
+  <link href="../../style.css" rel= "stylesheet"/>
+  <script src="../../js/jquery.js"></script>
+  <script src="../../js/builder.js"></script>
+  <link rel="icon" type="image/ico" href="favicon.ico"/>
+
+</head>
+<body>
+
+	  <div class="navbar">
+  <a class="navbar-brand col-md-2" href="../../index.html"><span class="spec-color">S</span>tageHelp
+  </a>
+  
+
+  <div class="col-sm-2" id="search-style">
+    <div class="input-group">
+      <form action="gallery.html">
+      <div class="restrain">
+      <input id="term" name="search-term" size="20" type="text">
+      <input id="term-go" type="submit" class="btn btn-default" value="Seek"/>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- navbar-toggle will  -->
+  <div class="navbar-toggle pull-left" id="small-nav" data-toggle="collapse" data-target=".big-nav">
+    <div class="toggle-small">^</div>
+    <ul class="menu-small" id="menu-click">
+      <li><a class="homepage-link" href="../../index.html">Hai !</a></li>
+      <li><a class="html-link" href="../html.html">HTML&amp;CSS</a></li>
+      <li><a class="jquery-link" href="../jquery.html">JQUERY&amp;JavaScript</a></li>
+      <li><a class="regexp-link" href="../regexp.html">RegEXP</a></li>
+      <li><a class="generator-link" href="../../generator.html">Generators</a></li>
+    </ul>
+    
+  </div>
+  <div class="collapse navbar-collapse big-nav col-md-7">
+    <ul class="pull-right breadcrumb menu-style">
+      <li><a class="homepage-link" href="../../index.html">Hai !</a></li>
+      <li><a class="html-link" href="../html.html">HTML&amp;CSS</a></li>
+      <li><a class="jquery-link" href="../jquery.html">JQUERY&amp;JavaScript</a></li>
+      <li><a class="regexp-link" href="../regexp.html">RegEXP</a></li>
+      <li><a class="generator-link" href="../../generator.html">Generators</a></li>
+    </ul>
+  </div>
+
+</div>
+<div class="container">
+  		
+  		<h1 id="fullview-heading">Web Development Fundamentals part 1 (HTML) - How to make a basic article page</h1>
+			<hr/>
+      <div id="fullview-paragraph">
+        
+  <p>It is all scary and frightening in the beginning, but keep calm and carry on, kid, you will get used to it!
+      </p>
+      <h2> Setup </h2>
+      <img src="../../images/tut/pic1.jpg" class="img-responsive img-thumbnail pull-right" alt="Responsive image" /> 
+      <p>Create a new folder (for example "first web"). <br/>
+     
+      Use your favourite text editor (notepad++, sublime, gedit) and then make a file called index.html and save & place it inside the "first web" folder. Next, make a file called style.css and put in in the same folder.  <br/>
+      Now we will set up the .html file and we will link it to the .css file (note they have to be in the same folder if you want to use the short notation "style.css").
+      
+<pre>
+  &lt;!DOCTYPE html>
+  &lt;html>
+  &lt;head>
+    &lt;meta charset="utf-8"/>
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    &lt;title>First Webpage&lt;/title>
+    &lt;link rel="stylesheet" href="style.css"/>
+  &lt;/head>
+  &lt;body>
+    
+  &lt;/body>
+  &lt;/html>
+</pre>
+    <h2>Building the semantics</h2>
+    <p>
+    After the setup we are ready for some HTML !<br/>
+     For now we will write the HTML structure, later we will tweak it's look and feel.
+    We will focus on the content between the body tags.
+    Step one will be to add a container, it is of a type of div. The div is a HTML element that helps separate the block items into nice chunks.<br/>
+    For example the menu will be one section, the article- another, if you have advertisement, it will populate its own div and so on.
+    So inside the body we will insert this code &lt;div class="container">&lt;/div>.
+    The part <span class="code">class="container" is not important right now.</span>
+
+    <br/>
+
+    Usually inside the container we will have a menu and the article itself. <br/>
+    So following the convention we will add two more divs inside the container div - it should look like this:
+    <pre>
+      &lt;div class="container">
+        &lt;div class="menu">&lt;/div>
+        &lt;div class="article">&lt;/div>
+      &lt;div>
+            
+    </pre>
+    Inside the menu we will create...duh, the menu !
+    Html menus follow this logic: make a parent ul tag and put li as children.
+    <pre>
+      &lt;ul>
+        &lt;li>Link1
+          &lt;ul>
+            &lt;li>Sublink >
+              &lt;ul>
+                &lt;li>Deeper&lt;/li>
+              &lt;/ul>
+            &lt;/li> 
+          &lt;/ul>
+        &lt;/li>
+        &lt;li>Link2&lt;/li>
+        &lt;li>Link3&lt;/li>
+      &lt;/ul>
+    </pre>
+    Right now the menu items are just structured text, to create links from them we use the "a" tag. <span class="code">&lt;a>Tag&lt;/a></span> creates a link in the object that it is wrapped around to an external location.<br/> Link is specified inside the a tag as an attribute:
+      <span class="code">&lt;a href="google.com">Google!&lt;/a></span>, where href specifies the location. The text between the "a" tag is the "link name".<br/><br/>
+      Instead of "Google!", we can put a div inside, ul element or anything we want and this will turn it in a link. So:
+      <pre>
+        &lt;li>&lt;a href="google.com">Deeper&lt;/a>&lt;/li>
+      </pre>
+
+      <br/> When the text Deeper is clicked it will redirect you to google.com now.<br/>
+      We can now customize our menu and where it will send us on click, so we can have multiple articles.<br/>
+      Now lets write the article structure and "content".<br/>
+      Under the closing tag of the menu div we add <span class="code">&lt;div class="article">&lt;/div></span>. <br/>
+      When writing the article we need to hive a heading, it is marked with &lt;h1>&lt;/h1>, followed by a paragraph or a sub header. It is important to keep the nesting logic.<br/>
+      Now we will also introduce the concept of images, because... images are very important! <br/>
+      Adding an image to your web-page is done like this: <span class="code">&lt;img src="cat.jpg"/></span>. Cat.jpg is the URL(link) to the image, also notice that there is no closing tag,but rather />.<br/> This is known as a self closing tag and few other HTML elements use it.
+      To add a paragraph under our headings we simply wrap our paragraph text with the <span class="code">&lt;p>&lt;/p></span> tag.<br/>
+      Now inside the article div, we should have something like this:
+      <pre>
+        &lt;h1>Article Name&lt;/h1>
+        &lt;hr/>
+          &lt;h2>Most importantly&lt;/h2>
+            &lt;img src="http://fc02.deviantart.net/fs70/f/2010/185/d/f/df2b11585fdf32b85c78a92c53cc7d6f.jpg" alt="">
+              &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>
+          &lt;h2>Second by importance&lt;/h2>
+            &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>
+      </pre>
+      Now we will add some "meta-data", so we need to make a div with a class of metadata. Inside we will put two paragraphs that will tell us who wrote it and when.
+      <pre>
+        &lt;div class="meta">
+          &lt;p>Written by: John Snow&lt;/p>
+          &lt;p>Written on: 01.02.2013&lt;/p>
+        &lt;/div>
+      </pre>
+      And finally, the footer, we make a div with a class footer and inside we put a paragraph with a copyright sign and the name of the creator, e.g.:
+      <pre>
+        &lt;div class="footer">
+          &lt;p>Plamen Kolev, all rights reserved 2014&lt;/p>
+        &lt;/div>
+      </pre>
+      <img class="pull-left" src="../../images/examp.jpg" alt=""/>
+      This is how it should look now, it is structured right, but looks boring and visually static.<br/>
+      To see how to make it more fun by using CSS, visit the part 2 where we will focus on designing the look and feel on top of the "skeleton" we created. There we will explain also why we used class="name" and how it will help us structure the content. <br/>
+      Note that the image used is taken from my <a href="http://taiart.deviantart.com/">deviantart</a> gallery and is my own work.
+      <a class="continued" href="tut2.html">Go to part 2</a>
+
+
+      </div>
+
+  	</div>
+    <div id="footer" class="col-lg-12">
+      <p>Plamen Kolev   &#169;</p>
+    </div>
+
+</body>
+</html>

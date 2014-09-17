@@ -1,0 +1,77 @@
+body{ 
+	background-image: url("images/escheresque.png"); 
+}
+
+.container{
+ margin:auto; width:80%; 
+} 
+
+.article{
+	background-color:white;
+	padding:20px;
+}
+
+ .menu > ul{
+  padding:0px; 
+  background-color:#294657; 
+  width:100%; 
+  color:white; 
+  cursor: pointer; 
+} 
+
+ul li{ 
+	padding-top:20px; 
+	display: inline-block; 
+	height:40px; 
+	width:100px; 
+	border-right:1px dotted gray; 
+	padding-left:50px; 
+} 
+
+#submenu{ 
+	display: none; 
+} 
+
+#submenu > li{ 
+	background-color:#476c82; 
+	position: absolute; 
+	height:20px; 
+	padding:10px; 
+	color:white; 
+}
+
+#dropdown1:hover #submenu{ 
+	display: block; 
+	margin-left:-90px; 
+	margin-top:20px; 
+} 
+
+#sub-sub{ 
+	display: none; 
+} 
+
+#dropdown2:hover #sub-sub{ 
+	display: block; 
+}
+
+#sub-sub > li{ 
+	background-color:#7398ad; 
+	margin-top:-30px; 
+	margin-left:70px; 
+	position: absolute; 
+	height:20px; 
+	padding:10px; 
+	color:white; 
+} 
+
+#dropdown1:hover #submenu{ 
+ 	display: block;
+ 	margin-left:-90px;
+ 	margin-top:20px; 
+}
+
+img{ width:60%; float:right; border:1px dashed gray; padding:5px; margin:10px; }
+
+.clearfix{clear:both; float:none; display: block }
+
+.footer{ height:40px; background-color:black; color:white; padding:10px; } 

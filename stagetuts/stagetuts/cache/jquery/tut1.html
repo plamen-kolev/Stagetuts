@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Product name</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="../../css/bootstrap.min.css" rel ="stylesheet"/>
+  <link href="../../style.css" rel= "stylesheet"/>
+  <script src="../../js/jquery.js"></script>
+  <script src="../../js/builder.js"></script>
+  <link rel="icon" type="image/ico" href="favicon.ico"/>
+
+</head>
+<body>
+
+	  <div class="navbar">
+  <a class="navbar-brand col-md-2" href="../../index.html"><span class="spec-color">S</span>tageHelp
+  </a>
+  
+
+  <div class="col-sm-2" id="search-style">
+    <div class="input-group">
+      <form action="gallery.html">
+      <div class="restrain">
+      <input id="term" name="search-term" size="20" type="text">
+      <input id="term-go" type="submit" class="btn btn-default" value="Seek"/>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- navbar-toggle will  -->
+  <div class="navbar-toggle pull-left" id="small-nav" data-toggle="collapse" data-target=".big-nav">
+    <div class="toggle-small">^</div>
+    <ul class="menu-small" id="menu-click">
+      <li><a class="homepage-link" href="../../index.html">Hai !</a></li>
+      <li><a class="html-link" href="../html.html">HTML&amp;CSS</a></li>
+      <li><a class="jquery-link" href="../jquery.html">JQUERY&amp;JavaScript</a></li>
+      <li><a class="regexp-link" href="../regexp.html">RegEXP</a></li>
+      <li><a class="generator-link" href="../../generator.html">Generators</a></li>
+    </ul>
+    
+  </div>
+  <div class="collapse navbar-collapse big-nav col-md-7">
+    <ul class="pull-right breadcrumb menu-style">
+      <li><a class="homepage-link" href="../../index.html">Hai !</a></li>
+      <li><a class="html-link" href="../html.html">HTML&amp;CSS</a></li>
+      <li><a class="jquery-link" href="../jquery.html">JQUERY&amp;JavaScript</a></li>
+      <li><a class="regexp-link" href="../regexp.html">RegEXP</a></li>
+      <li><a class="generator-link" href="../../generator.html">Generators</a></li>
+    </ul>
+  </div>
+
+</div>
+<div class="container">
+  		
+  		<h1 id="fullview-heading"> Create a loading screen with jQuery</h1>
+			<hr/>
+      <div id="fullview-paragraph">
+        
+ <h2>Setup</h2>
+    <p>
+      In this tutorial, we assume you know a little bit about CSS and HTML, so we will focus more on the Javascript side of things and will try to explain how jQuery is pulling the strings in the background.<br/>
+      <a href="examples/loading/index.html">Here</a> you can preview the end result.
+      <pre class="double-example">
+&lt;html>
+&lt;head>
+  &lt;meta charset="utf-8">
+  &lt;title>Loading&lt;/title>
+  &lt;link rel="stylesheet" href="style.css">
+  &lt;script src="jquery.js">&lt;/script>
+  &lt;script src="script.js">&lt;/script>
+&lt;/head>
+&lt;body>
+  &lt;div class="container">
+    &lt;button type="button" id="button">SHUTDOWN&lt;/button>
+    &lt;div class="loading">
+      &lt;div id="anim">&lt;p>&lt;/p>&lt;/div>
+      &lt;p>Please Wait&lt;/p>
+    &lt;/div>
+  &lt;/div>
+
+
+&lt;/body>
+&lt;/html>
+  </pre>
+  <pre class="double-example">
+body{
+  margin:0px;
+  padding:0px;
+}
+
+.container{
+  width:50%;
+  margin:auto;
+
+}
+
+#button{
+  text-align: center;
+  width:100%;
+  height:100px;
+  margin-top:30%;
+  cursor: pointer;
+  outline:0;
+  font-size:1.0em;
+  color:#606060;
+  border-radius:4px;
+  border:none;
+  background-color:#e7e8ea;
+  padding:0px;
+  box-shadow: inset 1px -15px 0px -10px rgba(0,0,0,0.2);
+  border:1px solid #eee;
+  
+
+
+}
+
+#button:hover{
+  -webkit-box-shadow: inset 1px -15px 0px -10px #74a5f7;
+-moz-box-shadow: inset 1px -15px 0px -10px #74a5f7;
+box-shadow: inset 1px -15px 0px -10px #74a5f7;
+}
+
+#button:active{
+  background-color:#74a5f7;
+color:white;
+
+-webkit-box-shadow: inset -14px 200px 0px -24px rgba(0,0,0,0.1);
+-moz-box-shadow: inset -14px 200px 0px -24px rgba(0,0,0,0.1);
+box-shadow: inset -14px 200px 0px -24px rgba(0,0,0,0.1);
+color:white;
+}
+
+
+.loading{
+  /*display: none;*/
+  width:100%;
+  height:100px;
+  margin-top:30%;
+  background-color:#f2f2f2;
+  border:1px dotted #999;
+  text-align: center;
+  border-radius:4px;
+  box-shadow: inset -14px 200px 0px -24px rgba(0,0,0,0.1);
+  display: none;
+
+}
+
+#anim{
+  display: none;
+  height:100px;
+  width:50%;
+  position: absolute;
+  background-image:url("load.png");
+  border-right:4px solid #6c8797;
+  box-shadow: inset -14px 200px 0px -24px rgba(0,0,0,0.1);
+}
+
+#anim p{
+  color:white;
+  font-size:1.5em;
+}
+
+.loading p{
+  z-index: 11;
+  margin-top:40px;
+}
+
+  </pre>
+
+  Make sure to download the image used <a href="../../examples/loading/load.png">here</a>. <br/>
+
+  Also make sure to link the jQuery file/URL to your website, you can do so by downloading JQuery and point it in the head of your HTML <span class="code">&lt;script src="jquery.js">&lt;/script></span> or by using google hosted by <span class="code">&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">&lt;/script></span><br/>
+  The html part contains of two parts, a button and a loading div that contains an animation panel, the loading div is hidden before the shutdown button is pressed. When pressed, the button triggers a jquery event that makes the loading div visible and also triggers the animation of it. <br/>
+
+  There isn't much substantial in the .css file, but it has info for hovering the button, pressing it, we also make the loading container take up dynamic space, set some neat shadows and hide the animation bit. We also include the downloaded image with <span class="code">background-image:url("load.png");</span><br/>
+  We also add a border right to get that swiping effect.
+  <h2>The jQuery Bit</h2>
+  <p> 
+    Now after we layed the fundamentals we can focus on the jquery fun.<br/>
+    We start of by wraping our jQuery with the ready function <span class="code">$(document).ready(function(){ &lt;-- CODE GOES IN HERE --> });</span>.<br/>
+    The code between the curly braces will be executed after the DOM is ready, making sure that everything will be set at the right time and we will get a proper code execution.<br/>
+    Now using jquery event handler we will cause something to happen inside our HTML document, we do that by using the click() function as such:<br/>
+    <pre>
+$("#button").click(function(){
+  Read as: When the element with id of button is clicked,
+  execute the function between the curly braces, like change color,move this, 
+  change visibility or execute a function.
+});
+    </pre>
+    We also create a variable called loading that will contain the progress, a variable in javascript is done by declaring var name-of-var = Assignment.<br/>
+    The one we need looks like this <span class="code">var loading = 0;</span><br/>
+    Time to write the animate function, a function is declared somewhere in the bottom of a .js file and starts with the word function, then function name, (with parameters) { and the body of the function }.<br/>
+    This is how our function will look like:
+    <pre>
+  function animate(){
+    if(loading/681*100&lt;100){
+      $("#anim p").html(parseInt(loading/681*100 )+ "%");
+    } else {
+      $("#anim p").html("Loading done");
+      $("#anim").css({"background-color":"white","background-image":"none"});
+      $("#anim p").css({"color":"#535353"});
+    }
+  }
+    </pre>
+    We convert the loading variable to percentage and check it against 100, if it is not 100% loaded, we keep animating it and we update the values in the #anim paragraph by using jquery <span class="code">.html()</span> function.<br/>
+    If the loading is done, we display "Loading done", we change the font color to black again.<br/>
+    We also use the jquery's built in animation function to create the background flowing effect in the loading bar. This is the most essential part of the animation. <br/>
+    Jquery animation breakdown:
+    $  ("tag").animate({ properties:values }), time, function(){}); <br/>
+    <pre>
+  $("#anim").animate({
+    backgroundPositionX: -loading/10+'%',
+    "width" : loading/681*50+"%",
+  },80, function(){});
+    </pre>
+
+    The width of the loading animation will we expanded until it reaches 100%, effectively creating the loading feeling.<br/>
+
+    And at the bottom of the function we increment the loading variable with some fixed value, I chose to use 5. Then we check if the loading has exceeded  the boundaries, if so, we return true to exit from the <span class="code">setTimeout.</span> <br/>
+    <pre>
+  loading+=5;
+  if (loading>688) {
+    return true
+  };
+  setTimeout(animate, 80);
+    </pre>
+
+    And now we are done, check it out.
+    <a href="../../examples/loading/index.html">Live example here</a>
+
+</div>
+</div>
+<div id="footer" class="col-lg-12">
+  <p>Plamen Kolev   &#169;</p>
+</div>
+
+
+</body>
+</html>

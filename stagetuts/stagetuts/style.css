@@ -1,0 +1,450 @@
+body{
+  height:100%;
+}
+
+html {
+  height: 100%;
+}
+
+input, textarea{
+    background-color:#666;
+    color: #FFF;
+}
+
+@font-face {
+  font-family: "Dosis";
+  src: url("fonts/Dosis-Regular.ttf");
+}
+
+@font-face{
+  font-family: "Oxygen";
+  src:url("fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "The Girl Next Door";
+  src: url("fonts/TheGirlNextDoor.ttf");
+}
+
+@font-face {
+  font-family: "Carrois Gothic";      /*For menus*/
+  src: url("fonts/CarroisGothic-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Railway Light";      /*For headers*/
+  src: url("fonts/Raleway-Light.ttf");
+}
+
+/*  ======================  Styling of common elements: ========================;*/
+
+.container{
+  /*margin-top:10px;*/
+  background-color:#fafafa;
+  border-radius: 4px;
+  margin-bottom:40px;
+}
+
+.col-lg-4,.gallery_text h1{
+  margin-top:50px;
+  margin-bottom:50px;
+  font-family:"Railway Light";
+}
+
+.special-style{
+    margin-top:50px;
+  margin-bottom:50px;
+  font-family:"Railway Light";
+}
+
+#fullview-heading{
+    margin-top:50px;
+  margin-bottom:50px;
+  font-family:"Railway Light";
+  margin-top:25px;
+  margin-bottom:2px;
+}
+
+.col-lg-4 h2{
+  font-family:"Railway Light";  
+  font-weight:bold;
+  font-size:2em;
+}
+
+#gallery_text p{
+  font-family:"Dosis";
+  font-size:1.2em;
+  color:#666;
+}
+
+#graytext p{
+    font-family:"Dosis";
+  font-size:1.2em;
+  color:#666;
+}
+
+a{
+  color: #004AAB;
+  outline:0;
+  text-decoration: none;
+}
+
+li>a{
+  color:#888;
+}
+
+a:hover{
+  color:#404040;
+  outline:0;
+  text-decoration: none
+}
+
+#footer{
+  height: 50px;
+  position: relative;
+  margin-top: -10px;
+  width:100%;
+  padding-top:20px;
+  clear:both;
+  background-color:#121212;
+}
+
+#footer p{
+  color:white;
+}
+
+/*======== /styling for common elements*/
+
+/*===================== Styling for the menu =========================;*/
+
+/*makes sure that the search button stays on the same level as the field*/
+.restrain{
+  width:100%;
+  min-width:240px;
+}
+
+#search-style{
+  display:inline-block;
+  float:left;
+}
+
+#menu-click{
+  margin-right:30px;
+}
+
+ /*Customizes the links for the smaller menu*/
+#menu-click li{ 
+  border-top:1px solid #dadada;
+  color:red;
+  text-align: center;
+  list-style-type: none;
+  font-size:1.5em;
+}
+
+/*Forces the big navigation menu to stay on the right*/
+.big-nav{
+  float:right;
+}
+
+/*style of the border that will toggle on and of the small menu*/
+.toggle-small{
+  display:block;
+  width:100%;
+  min-width:150px;
+  text-align: center;
+  height:10px;
+  background-color:#ffb776;
+  /*border:2px solid #ffd4ad;*/
+  /*border-radius:4px;*/
+  margin:auto;
+  cursor: pointer
+}
+
+#term-go{
+  margin-left:-10px;
+  margin-top:-4px;
+}
+
+#term{
+
+  border:2px solid #ffb776;
+}
+
+.navbar{
+  margin-top:20px;
+  padding-top:20px;
+  margin-bottom:0px;
+-webkit-box-shadow: -15px 4px 25px -16px rgba(56,56,56,1);
+-moz-box-shadow: -15px 4px 25px -16px rgba(56,56,56,1);
+box-shadow: -15px 4px 25px -16px rgba(56,56,56,1);
+
+}
+
+
+/*used when scrolling doown*/
+#smaller-navbar{
+  padding-top:5px;
+  margin:0px;
+  position:fixed;
+  width:100%;
+  top:0;
+  background-color:white;
+  z-index:111;
+  border-radius:0;
+}
+
+.navbar > a{
+  font-family: "The Girl Next Door";
+
+  text-decoration:none;
+  font-size:3em;
+  color:#5b5b5b;
+}
+
+.spec-color{
+  color:#ff7800;
+}
+
+
+.active{
+  color:#ff7800;
+}
+
+.menu-style{
+  margin-top:-5px;
+  background:none;
+  font-size:1.5em;
+}
+
+.menu-style,#menu-click a{
+  font-family:"The Girl Next Door";
+  text-decoration: none;
+
+}
+
+.menu-style,#menu-click a:hover{
+  color:#222;
+}
+
+.navbar-brand{
+  margin-left:10px;
+}
+
+/*===================== Styling for the main index page: =========================;*/
+
+.content-image img{
+  position:relative;
+  min-height:100px;
+  width:100%;
+  margin-left:-40px;
+}
+
+.paragraph-center{
+  margin:auto;
+}
+
+.index_container{
+  margin:auto;
+}
+
+.content-image img{
+  position:relative;
+  min-height:100px;
+  width:100%;
+  margin-left:-40px;
+}
+
+.paragraph-center{
+  position:relative;
+  margin:auto;
+
+}
+
+
+.content-image-text{
+  margin:auto;
+  margin-top:15%;
+  position:absolute;
+  left:20%;
+  right:20%;
+  margin-left:auto;
+  margin-right:auto;
+  min-width:250px;
+  z-index:1;
+}
+
+.content-image-text p{
+  display:inline;
+  color:white;
+  border:2px white solid;
+  border-radius:1px;
+  font-size:2.2em;
+  padding:5px;
+  font-family:"Railway Light";
+  
+}
+
+
+/*The box on the bottom of the page responsible for the creator page*/
+.circular-image{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  background: url(http://4.bp.blogspot.com/-Kq0l-GZrfxI/T5gmqV1qc2I/AAAAAAAAA4o/x1e8MrKij6w/s1600/06+james-dean-reading.jpg) no-repeat;
+  background-size: 100% auto;
+
+
+}
+
+/*=================== Carousel styling ========================*/
+
+.carousel { position: relative; overflow: auto; }
+.carousel li { list-style: none; }
+.carousel ul li { float: left; }
+#carousel-fit{
+  width:100%;
+}
+
+
+
+/*===================== CSS for the gallery preview ===================*/
+
+
+.row_shadow{
+  padding:10px;
+  margin-top:30px;
+-webkit-box-shadow: 0px 1px 20px -10px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 1px 20px -10px rgba(0,0,0,0.75);
+box-shadow: 0px 1px 20px -10px rgba(0,0,0,0.75);
+padding-bottom:10px;
+}
+
+
+
+#gallery-content h1{
+  font-size:1.5em;
+  margin:0px;
+  font-weight: bold;
+}
+
+#gallery-content p{
+  margin-bottom:5px;
+}
+
+.gallery-thumbnail{
+  width:130px;
+  height:130px;
+}
+
+.image-gal-container img{
+  margin-top:10px;
+  max-width:100px;
+}
+
+
+/*This is the styling of alert text for errors and general bad things*/
+.warning{
+  color:red;
+  font-weight: bold;
+  font-size: 1.8em;
+  margin:10px;
+}
+
+
+/*============= Css for the fullview tutorial page */
+
+
+ #fullview-paragraph{
+  font-family:"Oxygen";
+  font-size:1.2em;
+  color:#555;
+}
+
+pre{
+  border-radius:5px;
+  background-image:url("images/ecailles.png");
+  border:1px dashed #aaa;
+  margin:auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size:14px;
+  color:#f61b3f;
+  max-height:200px;
+  overflow:scroll;
+}
+
+
+
+.double-example{
+  width:50%;
+  display:inline-block;
+  float:left;
+}
+
+.code{
+  color:#f61b3f;
+}
+
+/*used in tutorials in the button for the next part*/
+.continued{
+  color:white;
+  display: block;
+  padding:10px;
+  background-color:#4691c1;
+  width: 300px
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  float:right;
+  text-align:center;
+  margin-top:10px;
+  margin-right: 30px;
+}
+
+/*  ============================  CSS FOR THE GENERATOR: ===========;*/
+.generator-container{
+  margin-top:30px;
+}
+
+/*Css for the box shadow */
+.generator-item{
+  text-align: center;
+  margin:auto;
+  width:80%;
+  height:100px;
+  background:gray;
+}
+
+.generator-item p{
+  padding-top:30px;
+  font-size:2em;
+  color:white;
+}
+
+.generator-input-position{
+  width:60%;
+  margin:auto;
+  margin-top:50px;
+}
+
+input{
+  background:white;
+  color:black;
+  border:2px solid orange;
+  height:30px;
+  border-radius: 4px;
+  padding-left:5px;
+  margin-top:2px;
+}
+
+/*style for the button tutorial*/
+#button-tutorial{
+  width:150px;
+  height:50px;
+  font-size:1em;
+  text-align: center;
+  display:block;
+  margin:auto;
+}
